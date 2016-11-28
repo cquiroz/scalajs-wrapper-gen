@@ -1,23 +1,23 @@
-package com.olvind
-package mui
+package com.olvind.semanticui
 
 import ammonite.ops._
+import com.olvind.{ComponentDef, Library, VarName}
 
 import scala.language.implicitConversions
 
-object MuiLibrary extends Library[ComponentDef] {
+object SemanticUILibrary extends Library[ComponentDef] {
 
-  override val importName   = VarName("mui")
-  override val location     = home / "Projects" / "material-ui" / "lib"
-  override val prefixOpt    = Some("Mui")
-  override val name         = "materialui"
-  override val typeMapper   = MuiTypeMapper
-  override val memberMapper = MuiTypeMemberMethodMapper
+  override val importName   = VarName("semantic-ui")
+  override val location     = home / "Projects" / "semantic-react" / "lib"
+  override val prefixOpt    = Some("SemanticUI")
+  override val name         = "semanticui"
+  override val typeMapper   = SemanticUITypeMapper
+  override val memberMapper = SemanticUITypeMemberMethodMapper
   override val outputPath   = home / 'Projects / "scalajs-react-components" / 'core / 'src / 'main / 'scala / 'chandu0101 / 'scalajs / 'react / 'components / name
 
   //todo: make requiresjs figure this stuff out!
   case object Internal {
-    val AppCanvas          = ComponentDef(CompName("AppCanvas"))
+    /*val AppCanvas          = ComponentDef(CompName("AppCanvas"))
     val BeforeAfterWrapper = ComponentDef(CompName("BeforeAfterWrapper"))
     val EnhancedButton     = ComponentDef(CompName("EnhancedButton"))
     val EnhancedSwitch     = ComponentDef(CompName("EnhancedSwitch"))
@@ -27,19 +27,19 @@ object MuiLibrary extends Library[ComponentDef] {
     val TouchRipple        = ComponentDef(CompName("TouchRipple"))
     val RenderToLayer      = ComponentDef(CompName("RenderToLayer"))
     //val EnhancedTextarea   = ComponentDef(CompName("EnhancedTextarea"))
-    val Tooltip            = ComponentDef(CompName("Tooltip"))
+    val Tooltip            = ComponentDef(CompName("Tooltip"))*/
   }
 
-  def DropDownMenu = ComponentDef(CompName("DropDownMenu"))
+  /*def DropDownMenu = ComponentDef(CompName("DropDownMenu"))
   def List_        = ComponentDef(CompName("List"))
   def ListItem     = ComponentDef(CompName("ListItem"), Some(Internal.EnhancedButton))
   def Menu         = ComponentDef(CompName("Menu"), Some(List_))
   def Paper        = ComponentDef(CompName("Paper"))
   def RadioButton  = ComponentDef(CompName("RadioButton"), Some(Internal.EnhancedSwitch))
-  //def TextField    = ComponentDef(CompName("TextField"), Some(Internal.EnhancedTextarea), domeTypeOpt = Some(DomInput))
+  //def TextField    = ComponentDef(CompName("TextField"), Some(Internal.EnhancedTextarea), domeTypeOpt = Some(DomInput)) */
 
-  val components: Seq[ComponentDef] =
-    Seq(
+  val components: Seq[ComponentDef] = Seq.empty
+    /*Seq(
       ComponentDef(CompName("AppBar"), Option(Paper)),
       //ComponentDef(CompName("AutoComplete"), Some(TextField)),
       ComponentDef(CompName("Avatar"), multipleChildren = false),
@@ -103,5 +103,5 @@ object MuiLibrary extends Library[ComponentDef] {
       //ComponentDef(CompName("ToolbarGroup")),
       ComponentDef(CompName("ToolbarSeparator")),
       ComponentDef(CompName("ToolbarTitle"))
-    )
+    )*/
 }

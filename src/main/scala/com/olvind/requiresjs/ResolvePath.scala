@@ -13,7 +13,8 @@ object ResolvePath {
           case true ⇒
             ResolvedPath(p / "index.js", p)
           case false ⇒
-            panic("handle this when it happens")
+            ResolvedPath(p, Path(p.toIO.getParentFile.toPath))
+            //panic("handle this when it happens")
         }
 
       case false ⇒
